@@ -4,23 +4,23 @@ A simple calculator in ASP.Net MVC
 <h1> Instructions for use </h1>
 <ol>
  <li>
-   when you start the program, you will abel to see three textblocks: for input first value, for input second value, for giv result;
-   and 5 buttons :<i>+</i> - (addition), <i>-</i> - (deduction),<i>*</i> (subtraction), <i></i>/ (division), and C (erasure from memory).
-   ![](img/1.png)
-   Your value should be only numeric, otherwise, the   program will give an error.Input your select from your keyboard. After you have inputed the value, click the enter button.
+   When you start the program, you will abel to see three textblocks: for input first value, for input second value, for giv result;
+   and 6 buttons :<i>+</i> (addition), <i>-</i> (deduction),<i>*</i> (subtraction), <i>/</i> (division),<i>C</i> (clean all values) and button with up arrows.
 </li>
 <li>
-   Then the programm will ask you to input second value. enter the data with the same rules as described in point 1. After that you will be abal to see your result.
-  </li>
+ First, input your values. You abal to input only numeric values and ",", otherwise, the program change other simbols to ",".Input value from your keyboard.
+ </li>
  <li>
-   Then you should to click on one of the operations (1-5). 
+   After you have inputed the value, you should to click one of the operation buttons (+,-,*,/). After that you will got yiur result in down textblock.
  </li>
 
   <li>
-  
+   If you want to use yor result as first value for next operation, click hte button with up arrows. 
   </li>
   
   <li>
-  
+   If you want to clear all of your values and result, click to big blue "C" button.
   </li>
 </ol>
+   ![uuu](1.png)
+
