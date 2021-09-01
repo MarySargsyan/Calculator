@@ -1,0 +1,69 @@
+﻿@model Calc2.Models.nums
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+@{
+    ViewBag.Title = "Калькулятор";
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $(".plus").click(function () {
+            $(".text").val($(".text").val() + " + ");
+        });
+        $(".minus").click(function () {
+            $(".text").val($(".text").val() + " - ");
+        });
+        $(".umnozh").click(function () {
+            $(".text").val($(".text").val() + " × ");
+        });
+        $(".del").click(function () {
+            $(".text").val($(".text").val() + " / ");
+        });
+        $(".ravno").click(function () {
+            $(".text").val($(".text").val() + " = ");
+        });
+        $(".zero").click(function () {
+            $(".text").val("");
+        });
+
+    });
+</script>
+@using (Html.BeginForm("Calcu", "Home", FormMethod.Get))
+{
+    <div style="height: 5em">
+
+    </div>
+
+    <div class="huge ui card center">
+
+        <div class="content">
+            <div class="ui big icon input">
+                <input name="Text" class="text" type="text" placeholder="Введите данные...">
+            </div>
+            <div class="ui small icon input">
+                <input name="Result" type="text" value="@Model.result">
+            </div>
+
+        </div>
+        <div class="content">
+            <div style="" class="ui four buttons">
+                <div class="ui button plus">+</div>
+                <div class="ui button minus">-</div>
+                <div class="ui button umnozh">×</div>
+                <div class="ui button del">/</div>
+            </div>
+        </div>
+        <div class="extra content">
+
+            <div class="ui two buttons">
+                <input class="ui button ravno" type="submit" value="=">
+                <div class="ui button zero">C</div>
+            </div>
+        </div>
+
+</div>
+}

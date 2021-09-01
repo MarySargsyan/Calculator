@@ -1,0 +1,78 @@
+﻿@model Calc2.Models.nums
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    @{
+        ViewBag.Title = "Калькулятор";
+    }
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+
+            $('.form-control').bind("change keyup input click", function () {
+                if (this.value.match(/[^0-9]/g)) {
+                    this.value = this.value.replace(/[^0-9]/g, ',');
+                }
+            });
+            $(".zero").click(function () {
+                $(".form-control").val("");
+            });
+            $(".up").click(function () {
+                $(".first").val($(".result").val());
+                $(".val").val("");
+            });
+
+        });
+    </script>
+    <div style="height: 5em"></div>
+    @using (Html.BeginForm("/Index", "calc", FormMethod.Post))
+    {
+
+        <div class="huge ui card center">
+
+            <div class="content">
+        @*<div class="ui big icon input">
+           <input name="Text" class="text" type="text" placeholder="Введите данные...">
+        </div>
+        <div class="ui small icon input">
+            <input name="Result" type="text" value="@Model.result">
+        </div>*@
+                <div class="ui form">
+                    <div class="fields">
+                        <div class="field">
+                            <label> Value 1</label>
+                            <input type="text" class="first form-control" id="a" name="a" value="@Model.a" />
+                        </div>
+                        <div class="field">
+                            <label>Value 2</label>
+                            <input type="text" class="val form-control" id="b" name="b" value="@Model.b" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Result</label>
+                    <div class="ui action input">
+                        <input type="text" class="val result form-control" id="result" name="result" value="@Model.result" />
+                        <button class="ui icon button up">
+                            <i class="angle double up icon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div style="" class="ui four buttons">
+                    <button type="submit" class="ui button" id="add" value="add" name="calculate">+</button>
+                    <button type="submit" class="ui button" id="min" value="min" name="calculate">-</button>
+                    <button type="submit" class="ui button" id="sub" value="sub" name="calculate">*</button>
+                    <button type="submit" class="ui button" id="add" value="divv" name="divvs">/</button>
+                </div>
+            </div>
+                            @*<div class="ui two buttons">
+                                 <input class="ui button ravno" type="submit" value="=">
+                             </div>*@
+              <div class="ui primary bottom attached button zero">C</div>
+        </div>
+     }
