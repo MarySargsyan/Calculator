@@ -22,5 +22,5 @@ A simple calculator in ASP.Net MVC
    If you want to clear all of your values and result, click to big blue "C" button.
   </li>
 </ol>
-   ![uuu](Calculator/1.png)
+   ![Instuctions](Calculator/1.png)
 
