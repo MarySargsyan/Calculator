@@ -15,7 +15,7 @@ A simple calculator in ASP.Net MVC
  </li>
 
   <li>
-   If you want to use yor result as first value for next operation, click hte button with up arrows. 
+   If you want to use yor result as first value for next operation, click hte button with up arrows. In this way second value and result will be cleaned.
   </li>
   
   <li>
